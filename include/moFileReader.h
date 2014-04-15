@@ -350,6 +350,16 @@ public:
     };
 
     /** \brief Reads a .mo-file
+     * \param[in] _filename The path to the file to load.
+     * \return SUCCESS on success or one of the other error-codes in eErrorCode on error.
+     *
+     * This is the core-feature. This method loads the .mo-file and stores
+     * all translation-pairs in a map. You can access this map via the method
+     * moFileReader::Lookup().
+     */
+    virtual moFileReader::eErrorCode ParseData(std::string data);
+
+    /** \brief Reads a .mo-file
       * \param[in] _filename The path to the file to load.
       * \return SUCCESS on success or one of the other error-codes in eErrorCode on error.
       *
